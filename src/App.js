@@ -1,20 +1,38 @@
-import { Button, makeStyles } from '@material-ui/core';
-
-
-const useStyles = makeStyles({
-  button: {
-    backgroundColor: 'blue',
-    padding: "10px"
-  }
-})
+import React from 'react';
+// import { Button, makeStyles } from '@material-ui/core';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import ShipList from './components/ShipList';
+import NewShip from './components/NewShip';
+import PirateList from './components/PirateList';
+import NewPirate from './components/NewPirate';
+import Home from './components/Home';
+// import PageNotFound from './components/PageNotFound';
+// const useStyles = makeStyles({
+//   button: {
+//     backgroundColor: 'blue',
+//     padding: "10px"
+//   }
+// })
 
 const App = () => {
-  const classes = useStyles();
+  // const classes = useStyles();
+ 
+
   return (
+    <Router>
     <div className="App">
-      <h1>Hello World</h1>
-      <Button variant="contained" className= { classes.button }>Click Me</Button>
+      <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/ships" element={<ShipList />} />
+          <Route path="/ships/new" element={<NewShip />} />
+          <Route path="/pirates" element={<PirateList />} />
+          <Route path="/pirates/new" element={<NewPirate />}/>
+          {/* <Route element={<PageNotFound />}/> */}
+        </Routes>
     </div>
+    </Router>
   );
 }
 
