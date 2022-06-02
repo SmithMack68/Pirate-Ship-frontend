@@ -9,7 +9,9 @@ const ShipCards = ({ ship }) => {
           <li>Ship Type: { ship.ship_type }</li>
           <li>Ranking: { ship.ranking }</li>
           <li>Status: { ship.status }</li>
-          <li>Crew: { ship.pirates.name }</li>
+          <li>Crew: { ship.pirates.map((pirate) => 
+                <ul>{pirate.title } : {pirate.name}</ul>
+               )} </li> 
         </ul>
     </div>
   )
