@@ -25,15 +25,19 @@ const NewPirate = () => {
       })
   }
   return (
-    <div>
+    <div style={{ fontFamily: "fantasy", textAlign: "center", color:"#6991B3", fontSize: 30}}>
       <h1>Add Pirate</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Name: </label>
-          <input type="text" value={name} onChange={handleChange} autoFocus={true}/>
+          <input style={{ fontFamily: "fantasy", height: 35, width: 250, fontSize: 30}} 
+          type="text"
+           value={name}
+           onChange={handleChange} 
+           autoFocus={true}></input>
         </div>
         <br/>
-        <input type="submit" value="Create Pirate"/>
+        <input style={{ fontFamily: "fantasy", textAlign: "center", color:"black", height: 29, width: 150, fontSize: 18, backgroundColor: "#6991B3"}}type="submit" value="Create Pirate"/>
       </form>
     </div>
   )

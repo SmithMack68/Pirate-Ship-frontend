@@ -11,10 +11,21 @@ const ShipList = () => {
     .then(ships => setShips(ships))
   }, [])
 
-const shipCards = ships.map((ship, index) => <ShipCards key={index} ship = { ship } />)
+  const deleteShip = (id) =>{
+    fetch(`http://localhost:9292/ships/${id}`, {
+      method: "DELETE",
+    });
+     removeShip(id)
+  }
+
+  const removeShip = (id) => {
+   const updatedShips = ships.filter((ship) => ship.id !== id);
+   setShips(updatedShips)
+  }
+
+const shipCards = ships.map((ship) => <ShipCards key={ ship.id } ship = { ship } deleteShip={ deleteShip }/>)
   return (
     <div>
-      <h1>Ships</h1>
       { shipCards }
     </div>
   )

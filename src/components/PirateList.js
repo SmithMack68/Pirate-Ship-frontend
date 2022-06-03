@@ -9,11 +9,22 @@ const PirateList = () => {
       .then(resp => resp.json())
       .then(pirates => setPirates(pirates))
     }, [])
+
+    const deletePirate = (id) =>{
+      fetch(`http://localhost:9292/pirates/${id}`, {
+        method: "DELETE",
+      });
+       removePirate(id)
+    }
   
-  const pirateCards = pirates.map((pirate, index) => <PirateCards key={index} pirate = { pirate }/>)
+    const removePirate = (id) => {
+     const updatedPirates = pirates.filter((pirate) => pirate.id !== id);
+     setPirates(updatedPirates)
+    }
+  
+  const pirateCards = pirates.map((pirate, index) => <PirateCards key={index} pirate = {pirate} deletePirate={deletePirate}/>)
     return (
       <div>
-        <h1>Pirates</h1>
         { pirateCards }
       </div>
     )

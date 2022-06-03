@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body {
+  background: url('../src/images/BoatImage.png') no-repeat center fixed;
+  background-size: cover;
+}

@@ -1,17 +1,18 @@
+// import { colors } from '@material-ui/core'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
 
 const NavBar = () => {
   return (
-    <div>
+    <div style={{fontFamily: "fantasy", textAlign: "justify", color:"#4087A5"}}>
       <ul>
         <nav>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/ships">Ships</Link></li>
-        <li><Link to="/ships/new">Build Ship</Link></li>
-        <li><Link to="/pirates">Pirates</Link></li>
-        <li><Link to="/pirates/new">Add Pirate</Link></li>
+        <li><Link to="/" style={{fontFamily: "fantasy", textAlign: "justify", color:"#6991B3", fontSize: 35}}>Home</Link></li>
+        <li><Link to="/ships" style={{fontFamily: "fantasy", textAlign: "justify", color:"#6991B3", fontSize: 35}}>Ships</Link></li>
+        <li><Link to="/ships/new" style={{fontFamily: "fantasy", textAlign: "justify", color:"#6991B3", fontSize: 35}}>Add Ship</Link></li>
+        <li><Link to="/pirates" style={{fontFamily: "fantasy", textAlign: "justify", color:"#6991B3", fontSize: 35}}>Pirates</Link></li>
+        <li><Link to="/pirates/new" style={{fontFamily: "fantasy", textAlign: "justify", color:"#6991B3", fontSize: 35}}>Add Pirate</Link></li>
         </nav>
       </ul>
     </div>
