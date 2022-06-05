@@ -8,6 +8,7 @@ const NavBar = () => {
     <div style={{fontFamily: "fantasy", textAlign: "justify", color:"#4087A5"}}>
       <ul>
         <nav>
+        {/* <nav style={{position: "fixed"}}> */}
         <li><Link to="/" style={{fontFamily: "fantasy", textAlign: "justify", color:"#6991B3", fontSize: 35}}>Home</Link></li>
         <li><Link to="/ships" style={{fontFamily: "fantasy", textAlign: "justify", color:"#6991B3", fontSize: 35}}>Ships</Link></li>
         <li><Link to="/ships/new" style={{fontFamily: "fantasy", textAlign: "justify", color:"#6991B3", fontSize: 35}}>Add Ship</Link></li>

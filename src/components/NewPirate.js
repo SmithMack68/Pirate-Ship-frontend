@@ -29,9 +29,9 @@ const NewPirate = () => {
       <h1>Add Pirate</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Name: </label>
-          <input style={{ fontFamily: "fantasy", height: 35, width: 250, fontSize: 30}} 
-          type="text"
+          <input style={{ fontFamily: "fantasy", height: 35, width: 250, color:"#6991B3", fontSize: 30}} 
+           type="text"
+           placeholder='Name:'
            value={name}
            onChange={handleChange} 
            autoFocus={true}></input>

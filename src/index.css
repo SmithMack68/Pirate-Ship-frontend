@@ -15,4 +15,9 @@ code {
 body {
   background: url('../src/images/BoatImage.png') no-repeat center fixed;
   background-size: cover;
+  position: initial;
+}
+
+::placeholder {
+  color: black;
 }
