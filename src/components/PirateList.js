@@ -24,7 +24,7 @@ const PirateList = () => {
   
   const pirateCards = pirates.map((pirate, index) => <PirateCards key={index} pirate = {pirate} deletePirate={deletePirate}/>)
     return (
-      <div>
+      <div className='pirate-container'>
         { pirateCards }
       </div>
     )

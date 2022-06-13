@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import ShipCards from './ShipCards'
-import { useNavigate } from 'react-router-dom'
-
+// import { useNavigate } from 'react-router-dom'
 
 const ShipList = () => {
-  const [ ships, setShips ] = useState([])
-  const navigate = useNavigate()
- 
+const [ ships, setShips ] = useState([])
 
   useEffect(() => {
     fetch('http://localhost:9292/ships')
@@ -14,26 +11,32 @@ const ShipList = () => {
     .then(ships => setShips(ships))
   }, [])
 
-  const handleSubmit = (e, shipObj ) => {
-    e.preventDefault()
-    fetch('http://localhost:9292/ships', {
-      method: "POST",
-      headers: {
-        "Content-Type": "apllication/json"
-      },
-      body: JSON.stringify({ shipObj })
-    })
-      .then(resp => resp.json())
-      .then(shipObj => {
-        setShips([shipObj, ...ships])
-        navigate('/ships')
-      })
-  }
+// const handleSubmit = (e) => {
+//   e.preventDefault()
+//   // const newShip={}
+//   fetch('http://localhost:9292/ships', {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "apllication/json"
+//     },
+//     body: JSON.stringify({ newShip })
+//   })
+//     .then(resp => resp.json())
+//     .then(data => {
+//       setShips(data)
+//       navigate('/ships')
+//     })
+// }
+  const handleAddShip = (newShip) => {
+      setShips([...ships, newShip])
+  
+}
 
-  // const addShip = (newShip) => {
-  //   const updatedShips = [...ships, newShip]
-  //   setShips(updatedShips)
-  // }
+// const handleUpdatedShip = (updatedShip) => {
+//   const updatedShips = ships.map((ship) =>
+//   ship.id === updatedShip.id ? updatedShip : ship)
+//   setShips(updatedShips)
+// }
 
   const deleteShip = (id) =>{
     fetch(`http://localhost:9292/ships/${id}`, {
@@ -47,9 +50,9 @@ const ShipList = () => {
    setShips(updatedShips)
   }
 
-const shipCards = ships.map((ship) => <ShipCards key={ ship.id } ship = { ship } deleteShip={ deleteShip } handleSubmit={handleSubmit}/>)
+const shipCards = ships.map((ship) => <ShipCards key={ ship.id } ship = { ship } deleteShip={ deleteShip } onAddShip={handleAddShip} />)
   return (
-    <div>
+    <div className='ship-container'>
       { shipCards }
     </div>
   )

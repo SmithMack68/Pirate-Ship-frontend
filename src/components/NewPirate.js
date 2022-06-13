@@ -25,11 +25,12 @@ const NewPirate = () => {
       })
   }
   return (
+    <div className="new-pirate-container">
     <div style={{ fontFamily: "fantasy", textAlign: "center", color:"#6991B3", fontSize: 30}}>
       <h1>Add Pirate</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          <input style={{ fontFamily: "fantasy", height: 35, width: 250, color:"#6991B3", fontSize: 30}} 
+          <input style={{ fontFamily: "fantasy", height: 35, width: 300, color:"#6991B3", fontSize: 30}} 
            type="text"
            placeholder='Name:'
            value={name}
@@ -39,6 +40,7 @@ const NewPirate = () => {
         <br/>
         <input style={{ fontFamily: "fantasy", textAlign: "center", color:"black", height: 29, width: 150, fontSize: 18, backgroundColor: "#6991B3"}}type="submit" value="Create Pirate"/>
       </form>
+    </div>
     </div>
   )
 }
