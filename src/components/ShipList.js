@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ShipCards from './ShipCards'
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const ShipList = () => {
 const [ ships, setShips ] = useState([])

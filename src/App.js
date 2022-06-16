@@ -7,6 +7,7 @@ import NewShip from './components/NewShip';
 import PirateList from './components/PirateList';
 import NewPirate from './components/NewPirate';
 import Home from './components/Home';
+// import ShipCards from './components/ShipCards';
 // import PageNotFound from './components/PageNotFound';
 // const useStyles = makeStyles({
 //   button: {
