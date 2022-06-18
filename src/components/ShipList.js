@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import ShipCards from './ShipCards'
-// import { useNavigate } from 'react-router-dom'
 
 const ShipList = () => {
 const [ ships, setShips ] = useState([])
@@ -10,12 +9,6 @@ const [ ships, setShips ] = useState([])
     .then(resp => resp.json())
     .then(ships => setShips(ships))
   }, [])
-
-
-  const handleAddShip = (newShip) => {
-      setShips([...ships, newShip])
-  
-}
 
   const deleteShip = (id) =>{
     fetch(`http://localhost:9292/ships/${id}`, {
@@ -29,7 +22,7 @@ const [ ships, setShips ] = useState([])
    setShips(updatedShips)
   }
 
-const shipCards = ships.map((ship) => <ShipCards key={ ship.id } ship={ ship } deleteShip={ deleteShip } onAddShip={handleAddShip} />)
+const shipCards = ships.map((ship, index) => <ShipCards key={index} ship={ship} deleteShip={deleteShip}  />)
   return (
     <div className='ship-container'>
       { shipCards }

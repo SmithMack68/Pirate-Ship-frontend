@@ -2,11 +2,15 @@ import React, { useState }from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const NewPirate = () => {
-  const [ name, setName ] = useState("")
+  const [ state, setState ] = useState({
+    name:"",
+    title: ""
+  })
   const navigate = useNavigate()
 
   const handleChange = (e) => {
-    setName(e.target.value)
+    setState({...state,
+    [e.target.name]:e.target.value })
   }
 
   const handleSubmit = (e) => {
@@ -16,11 +20,11 @@ const NewPirate = () => {
       headers: {
       'Content-Type': 'application/json'
     },
-      body: JSON.stringify({ name })
+      body: JSON.stringify(state)
     })
       .then(resp => resp.json())
       .then(data => {
-        setName(data)
+        setState(data)
         navigate('/pirates')
       })
   }
@@ -33,7 +37,17 @@ const NewPirate = () => {
           <input style={{ fontFamily: "fantasy", height: 35, width: 300, color:"#6991B3", fontSize: 30}} 
            type="text"
            placeholder='Name:'
-           value={name}
+           name="name"
+           value={ state.name }
+           onChange={handleChange} 
+           autoFocus={true}></input>
+        </div>
+        <div>
+          <input style={{ fontFamily: "fantasy", height: 35, width: 300, color:"#6991B3", fontSize: 30}} 
+           type="text"
+           placeholder='Title:'
+           name="title"
+           value={state.title}
            onChange={handleChange} 
            autoFocus={true}></input>
         </div>
