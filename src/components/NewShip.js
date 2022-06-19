@@ -15,7 +15,6 @@ const NewShip = () => {
     [e.target.name]:e.target.value })
   }
   
-
  const handleSubmit = (e) => {
     e.preventDefault()
     fetch('http://localhost:9292/ships', {
@@ -23,7 +22,7 @@ const NewShip = () => {
       headers: {
         'Content-Type': 'apllication/json'
       },
-        body: JSON.stringify(state),
+        body: JSON.stringify(state)
     })
       .then(resp => resp.json())
       .then(data => {
@@ -41,7 +40,7 @@ const NewShip = () => {
            type="text"
            placeholder="Name:"
            name="name"
-           value={state.name}
+           value={ state.name }
            onChange={ handleChange }
            autoFocus={true}></input>
         </div>
@@ -50,7 +49,7 @@ const NewShip = () => {
           placeholder="Ship Type:"
           type="text" 
           name= "shipType"
-          value={state.shipType} 
+          value={ state.shipType } 
           onChange={ handleChange } 
           autoFocus={true}></input>
         </div>
@@ -59,7 +58,7 @@ const NewShip = () => {
           placeholder="Ranking:" 
           type="text" 
           name="ranking"
-          value={state.ranking} 
+          value={ state.ranking } 
           onChange={ handleChange } 
           autoFocus={true}></input>
         </div>
@@ -68,7 +67,7 @@ const NewShip = () => {
           placeholder="Status:" 
           type="text"
           name="status"
-          value={state.status} 
+          value={ state.status } 
           onChange={ handleChange } 
           autoFocus={true}></input>
         </div>

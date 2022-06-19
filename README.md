@@ -1,22 +1,22 @@
 # Phase-3-Project Frontend
-This is a frontend application for a ????
+This is a frontend application for a Pirate Ship
 app. The objective of this project is to showcase 
 work that I did for Flatiron school.
 
 
-###Requirements
+### Requirements
 * node version 14.17.5
 * yarn 1.22.11
 
 
 ### How to use
-Fork and clone
-Run yarn install
-Run yarn start
-Follow directions for backend [url here]
+* Fork and clone
+* Run yarn install
+* Run yarn start
+* Follow directions for backend [https://github.com/SmithMack68/phase-3-sinatra-react-project]
 
 ### Licensing  (MIT, optional)
-Copyright (c) {{ year }} {{ organization }}
+Copyright (c) {{ 2022 }} {{ FlatIronSchool }}
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
