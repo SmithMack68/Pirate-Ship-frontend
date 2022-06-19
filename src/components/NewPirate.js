@@ -47,7 +47,7 @@ const NewPirate = () => {
            type="text"
            placeholder='Title:'
            name="title"
-           value={state.title}
+           value={ state.title }
            onChange={handleChange} 
            autoFocus={true}></input>
         </div>

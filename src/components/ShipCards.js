@@ -5,7 +5,7 @@ const ShipCards = ({ ship, deleteShip }) => {
     <div className='card'>
     <div style={{fontFamily: "fantasy", textAlign: "center", color:"#6991B3", fontSize: 25}}>
         <h2 style={{ fontFamily: "fantasy", textAlign: "center",color:"#6991B3", fontSize: 45}}>{ ship.name }</h2>  
-        <ul>Ship Type: { ship.ship_type }</ul>
+        <ul>Class: { ship.ship_type }</ul>
         <ul>Ranking: { ship.ranking }</ul>
         <ul>Status: { ship.status }</ul>
         <ul>Ship's Crew:{ ship.pirates.map((pirate, index) => 

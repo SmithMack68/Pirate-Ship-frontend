@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const NewShip = () => {
   const [ state, setState ] = useState({
     name: "",
-    shipType: "",
+    ship_type: "",
     ranking: "",
     status: ""
   })
@@ -17,11 +17,12 @@ const NewShip = () => {
   
  const handleSubmit = (e) => {
     e.preventDefault()
-    fetch('http://localhost:9292/ships', {
+    fetch("http://localhost:9292/ships", {
       method: "POST",
       headers: {
-        'Content-Type': 'apllication/json'
-      },
+        "Content-Type": "application/json",
+        'Accept': 'application/json'
+    },
         body: JSON.stringify(state)
     })
       .then(resp => resp.json())
@@ -34,7 +35,7 @@ const NewShip = () => {
     <div className='new-ship-container'>
     <div style={{ fontFamily: "fantasy", textAlign: "center", color:"#6991B3", fontSize: 30}}>
       <h1>Add Ship</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={ handleSubmit }>
         <div>
           <input style={{fontFamily: "fantasy", height: 35, width: 350, fontSize: 30}}
            type="text"
@@ -46,10 +47,10 @@ const NewShip = () => {
         </div>
         <div>
           <input style={{ fontFamily: "fantasy", height: 35, width: 350, fontSize: 30}} 
-          placeholder="Ship Type:"
+          placeholder="Class:"
           type="text" 
-          name= "shipType"
-          value={ state.shipType } 
+          name= "ship_type"
+          value={ state.ship_type } 
           onChange={ handleChange } 
           autoFocus={true}></input>
         </div>
@@ -69,8 +70,17 @@ const NewShip = () => {
           name="status"
           value={ state.status } 
           onChange={ handleChange } 
-          autoFocus={true}></input>
+          autoFocus={true} />
         </div>
+        {/* <div>
+          <input style={{fontFamily: "fantasy", height: 35, width: 350, fontSize: 30}}
+          placeholder="Pirate Crew:" 
+          type="text"
+          name="pirates"
+          value={ state.pirates } 
+          onChange={ handleChange } 
+          autoFocus={true} />
+        </div> */}
         <br/>
         <input style={{ fontFamily: "fantasy", textAlign: "center", color:"black", height: 29, width: 100, fontSize: 18, backgroundColor: "#6991B3"}} type="submit" value="Add Ship"/>
       </form>
