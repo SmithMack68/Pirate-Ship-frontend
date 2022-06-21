@@ -22,7 +22,7 @@ const [ ships, setShips ] = useState([])
    setShips(updatedShips)
   }
 
-const shipCards = ships.map((ship, index) => <ShipCards key={index} ship={ship} deleteShip={deleteShip}  />)
+const shipCards = ships.map((ship, index) => <ShipCards key={index} ship={ship} deleteShip={deleteShip} />)
   return (
     <div className='ship-container'>
       { shipCards }

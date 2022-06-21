@@ -1,6 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const ShipCards = ({ ship, deleteShip }) => {
+  const navigate = useNavigate()
+
+  const handleNavigate = () => {
+    navigate(`/ships/${ship.id}`)
+  }
   return (
     <div className='card'>
     <div style={{fontFamily: "fantasy", textAlign: "center", color:"#6991B3", fontSize: 25}}>
@@ -13,10 +20,7 @@ const ShipCards = ({ ship, deleteShip }) => {
               )} </ul> 
         <div>     
         <button onClick={(e) => deleteShip(ship.id)} style={{ fontFamily: "fantasy", textAlign: "center", color:"black", height: 29, width: 150, fontSize: 18, backgroundColor: "#6991B3"}}>Sink Ship</button>
-        <button style={{ fontFamily: "fantasy", textAlign: "center", color:"black", height: 29, width: 150, fontSize: 18, backgroundColor: "#6991B3"}}>Add Pirate Crew</button>
-        {/* <Routes>
-          <Route path="/pirates/new"></Route>
-        </Routes> */}
+        <button onClick={ handleNavigate } style={{ fontFamily: "fantasy", textAlign: "center", color:"black", height: 29, width: 150, fontSize: 18, backgroundColor: "#6991B3"}}>Ship Details</button>
         </div>      
       </div>
       </div>

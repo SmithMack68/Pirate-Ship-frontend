@@ -72,15 +72,6 @@ const NewShip = () => {
           onChange={ handleChange } 
           autoFocus={true} />
         </div>
-        {/* <div>
-          <input style={{fontFamily: "fantasy", height: 35, width: 350, fontSize: 30}}
-          placeholder="Pirate Crew:" 
-          type="text"
-          name="pirates"
-          value={ state.pirates } 
-          onChange={ handleChange } 
-          autoFocus={true} />
-        </div> */}
         <br/>
         <input style={{ fontFamily: "fantasy", textAlign: "center", color:"black", height: 29, width: 100, fontSize: 18, backgroundColor: "#6991B3"}} type="submit" value="Add Ship"/>
       </form>

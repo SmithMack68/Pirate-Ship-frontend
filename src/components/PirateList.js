@@ -22,7 +22,7 @@ const PirateList = () => {
      setPirates(updatedPirates)
     }
   
-  const pirateCards = pirates.map((pirate, index) => <PirateCards key={index} pirate = {pirate} deletePirate={deletePirate}/>)
+  const pirateCards = pirates.map((pirate, index) => <PirateCards key={index} pirate={pirate} ship={ pirate.ship } deletePirate={deletePirate}/>)
     return (
       <div className='pirate-container'>
         { pirateCards }

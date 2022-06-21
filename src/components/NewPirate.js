@@ -28,6 +28,7 @@ const NewPirate = () => {
         navigate('/pirates')
       })
   }
+  
   return (
     <div className="new-pirate-container">
     <div style={{ fontFamily: "fantasy", textAlign: "center", color:"#6991B3", fontSize: 30}}>
