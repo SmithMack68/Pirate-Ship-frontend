@@ -1,22 +1,15 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 const AddCrewToShip = () => {
-    const [ship, setShip] = useState(null)
     const [state, setState] = useState({
         name:"",
         title:""
         })
 
-    const { shipId } = useParams()
+    const { ship_id } = useParams()
     const navigate = useNavigate()
-
-    // useEffect(() => {
-    //     fetch(`http://localhost:9292/ships/${ship_id}`)
-    //     .then(resp => resp.json())
-    //     .then(ship => setShip(ship))
-    //   }, [])
 
     const handleChange = (e) => {
         setState({...state,
@@ -25,17 +18,18 @@ const AddCrewToShip = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch(`http://localhost:9292/ships/${shipId}/pirates`, {
+        fetch(`http://localhost:9292/ships/${ship_id}/pirates`, {
           method: "POST",
           headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
     },
       body: JSON.stringify(state)
     })
       .then(resp => resp.json())
       .then(data => {
         setState(data)
-        navigate('/ships/:id')
+        navigate(`/ships/${ship_id}`)
       })
   }
 
