@@ -1,4 +1,4 @@
-# Phase-3-Project Frontend
+# Pirate Ship
 This is a frontend application for a Pirate Ship
 app. The objective of this project is to showcase 
 work that I did for Flatiron school.
