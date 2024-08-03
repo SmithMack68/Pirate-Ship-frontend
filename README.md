@@ -3,6 +3,8 @@ This is a frontend application for a Pirate Ship
 app. The objective of this project is to showcase 
 work that I did for Flatiron school.
 
+Pirate Ships Phase-3 Project for the Flatiron School in Software Engineering. Features a React v6 frontend and an Active Record/Sinatra/Rake Ruby backend.  Pick a pirate ship and then add your crew. Be careful to not get sunk or keelhauled. Features historical real ships and pirates.
+
 
 ### Requirements
 * node version 14.17.5
